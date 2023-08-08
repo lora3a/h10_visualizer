@@ -1,0 +1,29 @@
+apiVersion: 1
+
+deleteDatasources:
+  - name: PostgreSQL
+    orgId: 1
+
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    user: ${POSTGRES_USERNAME}
+    database: h10
+    basicAuth: true
+    basicAuthUser: ${GRAFANA_USERNAME}
+    basicAuthPassword: ${GRAFANA_PASSWORD}
+    uid: POSTGRESQLDATABASE
+    isDefault: true
+    jsonData:
+      sslmode: disable
+      tlsAuth: false
+      tlsAuthWithCACert: false
+    secureJsonData:
+      password: ${POSTGRES_PASSWORD}
+      tlsCACert: ""
+      tlsClientCert: ""
+      tlsClientKey: ""
+    version: 1
+    editable: true
