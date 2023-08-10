@@ -35,4 +35,5 @@ markdown_extensions:
       anchorlink: true
 
 nav:
+  - HOME: index.md
   - Getting Started: getting_started.md
